@@ -45,6 +45,12 @@ clean:
 	rm -f *.o *~ core.* pythonspot.c playcartoon lotr lotr.static \
 		pythonspot.pxi pythonspot.h playav
 
+install:
+	install -m 0755 lotr /usr/games
+	install -m 0644 README /usr/share/doc/lotr
+	install -m 0644 lotr.desktop /usr/share/applications
+
+.PHONY: install
 
 lotr: $(OBJFILES) lotr.o
 	$(LD) $(OBJFILES) $(LIBRARIES) lotr.o -o lotr
