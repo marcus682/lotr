@@ -49,6 +49,8 @@ install:
 	install -m 0755 lotr /usr/games
 	install -m 0644 README /usr/share/doc/lotr
 	install -m 0644 lotr.desktop /usr/share/applications
+	mkdir -p /usr/local/share/games/lotr
+	install -m 0644 data/* /usr/local/share/games/lotr
 
 .PHONY: install
 
